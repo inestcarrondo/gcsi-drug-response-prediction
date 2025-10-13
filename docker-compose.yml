@@ -1,0 +1,36 @@
+version: "3.9"
+
+services:
+  postgres:
+    build: ./de/docker
+    container_name: pg_daredatachallenge
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: daredatachallenge
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./de/data:/data:ro
+      - ./de/db_admin:/docker-entrypoint-initdb.d:ro
+
+  adminer:  # optional web UI at http://localhost:8080
+    image: adminer:latest
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+
+  api:
+    build: ./deployment/api
+    container_name: api_gcsi
+    environment:
+      MODEL_PATH: /models/model.joblib
+      FEATURES_PATH: /models/features.json
+    volumes:
+      - ./ds/artifacts:/models:ro
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+

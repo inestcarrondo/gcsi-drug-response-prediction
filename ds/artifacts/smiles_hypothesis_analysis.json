@@ -1,0 +1,65 @@
+{
+  "hypothesis": "SMILES features should help cross-drug but not within-drug prediction",
+  "results": {
+    "within_drug": [
+      {
+        "model": "ridge",
+        "r2_no_smiles": -12729417.84063993,
+        "r2_with_smiles": -12745474.493591012,
+        "difference": -16056.652951082215
+      },
+      {
+        "model": "hgb",
+        "r2_no_smiles": 0.8774254492640023,
+        "r2_with_smiles": 0.8760134231705131,
+        "difference": -0.001412026093489227
+      },
+      {
+        "model": "rf",
+        "r2_no_smiles": 0.8219756248421143,
+        "r2_with_smiles": 0.8249994274834402,
+        "difference": 0.0030238026413259567
+      }
+    ],
+    "cross_drug": [
+      {
+        "model": "ridge",
+        "r2_no_smiles": 0.1814138873519675,
+        "r2_with_smiles": -0.20702021567537598,
+        "r2_improvement": -0.3884341030273435,
+        "spearman_no_smiles": 0.5192601452645691,
+        "spearman_with_smiles": 0.4030454663038399,
+        "spearman_improvement": -0.11621467896072918
+      },
+      {
+        "model": "hgb",
+        "r2_no_smiles": 0.7180041963923095,
+        "r2_with_smiles": 0.7283975581249299,
+        "r2_improvement": 0.010393361732620399,
+        "spearman_no_smiles": 0.8706871994706371,
+        "spearman_with_smiles": 0.8790615578175955,
+        "spearman_improvement": 0.008374358346958433
+      },
+      {
+        "model": "rf",
+        "r2_no_smiles": 0.4888605565487406,
+        "r2_with_smiles": 0.4237891074342657,
+        "r2_improvement": -0.06507144911447493,
+        "spearman_no_smiles": 0.7306801982388045,
+        "spearman_with_smiles": 0.6845659239953259,
+        "spearman_improvement": -0.04611427424347858
+      }
+    ],
+    "best_within_drug": {
+      "r2": 0.8774254492640023,
+      "model": "hgb",
+      "used_smiles": false
+    },
+    "best_cross_drug": {
+      "r2": 0.7283975581249299,
+      "model": "hgb",
+      "used_smiles": true
+    },
+    "performance_gap": 0.14902789113907244
+  }
+}

@@ -1,0 +1,19 @@
+Metadata-Version: 2.4
+Name: data_science
+Version: 0.1.0
+Summary: gCSI Drug Response Prediction Package
+Author: Data Science Team
+Requires-Python: >=3.8
+Requires-Dist: pandas>=1.3.0
+Requires-Dist: numpy>=1.21.0
+Requires-Dist: scikit-learn>=1.0.0
+Requires-Dist: sqlalchemy>=1.4.0
+Requires-Dist: psycopg2-binary>=2.9.0
+Requires-Dist: rdkit-pypi>=2022.3.0
+Requires-Dist: matplotlib>=3.5.0
+Requires-Dist: seaborn>=0.11.0
+Requires-Dist: scipy>=1.7.0
+Dynamic: author
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary

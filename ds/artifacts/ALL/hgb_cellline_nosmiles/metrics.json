@@ -1,0 +1,27 @@
+{
+  "task": "regression",
+  "target_alias": "target",
+  "aliased_from": "grinf",
+  "scores": {
+    "r2": 0.8774254492640023,
+    "rmse": 0.24204158785956634,
+    "mae": 0.15034923323217977,
+    "spearman": 0.9426432488213682
+  },
+  "n_train": 13121,
+  "n_test": 3183,
+  "random_state": 42,
+  "drug": "ALL",
+  "used_smiles": false,
+  "smiles_column": null,
+  "smiles_forced_off": false,
+  "split": "cellline",
+  "model": "hgb",
+  "cv": {
+    "best_params": {
+      "model__learning_rate": 0.1,
+      "model__max_depth": null
+    },
+    "best_score_mean_r2": 0.8671835568619598
+  }
+}

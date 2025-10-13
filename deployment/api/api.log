@@ -1,0 +1,66 @@
+/home/inescarrondo/miniconda3/envs/gcsi_env/lib/python3.11/site-packages/pydantic/_internal/_fields.py:132: UserWarning: Field "model_info" in PredictResponse has conflict with protected namespace "model_".
+
+You may be able to resolve this warning by setting `model_config['protected_namespaces'] = ()`.
+  warnings.warn(
+/home/inescarrondo/miniconda3/envs/gcsi_env/lib/python3.11/site-packages/pydantic/_internal/_fields.py:132: UserWarning: Field "model_loaded" in HealthResponse has conflict with protected namespace "model_".
+
+You may be able to resolve this warning by setting `model_config['protected_namespaces'] = ()`.
+  warnings.warn(
+/home/inescarrondo/miniconda3/envs/gcsi_env/lib/python3.11/site-packages/pydantic/_internal/_fields.py:132: UserWarning: Field "model_path" in HealthResponse has conflict with protected namespace "model_".
+
+You may be able to resolve this warning by setting `model_config['protected_namespaces'] = ()`.
+  warnings.warn(
+INFO:     Started server process [6647]
+INFO:     Waiting for application startup.
+2025-10-12 22:09:29,122 - app - INFO - Model artifacts not found, training new model...
+2025-10-12 22:09:29,123 - app - INFO - Training Ridge model with basic settings...
+2025-10-12 22:09:30,583 - app - INFO - Model trained and loaded successfully. R²: 0.507
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+Multi-drug training (n=16304). TARGET='grinf', include_smiles=False, split=random, model=ridge
+Saved: /mnt/c/Users/ines.carrondo/gcsi_alpha/deployment/api/../../ds/artifacts/api_trained/ridge_random_nosmiles/model.joblib /mnt/c/Users/ines.carrondo/gcsi_alpha/deployment/api/../../ds/artifacts/api_trained/ridge_random_nosmiles/features.json
+Metrics: {
+  "task": "regression",
+  "target_alias": "target",
+  "aliased_from": "grinf",
+  "scores": {
+    "r2": 0.5070195239644661,
+    "rmse": 0.48888500657790124,
+    "mae": 0.3534230175088774,
+    "spearman": 0.750822777909984
+  },
+  "n_train": 13043,
+  "n_test": 3261,
+  "random_state": 42,
+  "drug": "ALL",
+  "used_smiles": false,
+  "smiles_column": null,
+  "split": "random",
+  "model": "ridge",
+  "cv": null
+}
+INFO:     127.0.0.1:49888 - "GET /health HTTP/1.1" 200 OK
+2025-10-12 22:09:52,693 - app - INFO - Processing 1 samples for prediction
+INFO:     127.0.0.1:46948 - "POST /predict HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51508 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37630 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37630 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35772 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35778 - "POST /predict HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:37632 - "GET /model/info HTTP/1.1" 200 OK
+2025-10-13 00:39:09,222 - app - INFO - Processing 1 samples for prediction
+INFO:     127.0.0.1:38488 - "POST /predict HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46556 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43610 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34538 - "POST /predict HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:48668 - "GET /health HTTP/1.1" 200 OK
+2025-10-13 01:17:20,244 - app - INFO - Processing 1 samples for prediction
+INFO:     127.0.0.1:50064 - "POST /predict HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51484 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51492 - "POST /predict HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:33726 - "POST /predict HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:52184 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54322 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33558 - "GET /health HTTP/1.1" 200 OK
+2025-10-13 01:20:34,156 - app - INFO - Processing 1 samples for prediction
+INFO:     127.0.0.1:33562 - "POST /predict HTTP/1.1" 200 OK
